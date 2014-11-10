@@ -1,0 +1,13 @@
+extends layout
+block content
+	.row.page-layout
+		.col-md-4.col-md-offset-4
+			h2 Вход в систему
+			.well
+				form(action='/login', method='post')
+					p
+						input.form-control(type='text', name='username', placeholder='Пользователь')
+					p
+						input.form-control(type='password', name='password', placeholder='Пароль')
+					
+					input.btn.btn-primary(type='submit', value='Войти')

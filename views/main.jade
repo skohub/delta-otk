@@ -1,0 +1,45 @@
+extends layout.jade
+block content
+	.page-layout.row
+		.col-xs-3
+			.panel.panel-default
+				.panel-heading Создание нового акта
+				.panel-body
+					label(for='orderid') Номер заказа
+					p
+						input.form-control(type='text', id='orderid', placeholder='Номер')
+					p
+						input.btn.btn-md.btn-primary(value='Новый акт (печать)', onClick='new_act(1)', style='width: 230px')
+					p
+						input.btn.btn-md.btn-primary(value='Новый акт (ламинация)', onClick='new_act(2)', style='width: 230px')
+		.col-xs-9
+			.panel.panel-default
+				.panel-heading Последние созданные акты
+				.panel-body
+					table.table.table-condensed.table-hover
+						thead
+							th Номер акта
+							th Номер заказа
+							th Заказчик
+							th Вид акта
+							th Действие
+						tbody
+							for entity in entities
+								tr
+									td
+										a(href='/act/#{entity.entityid}')
+											=entity.innerid
+									td
+										a(href='/act/#{entity.entityid}')
+											=entity.orderid
+									td
+										a(href='/act/#{entity.entityid}')
+											=entity.name
+									td
+										a(href='/act/#{entity.entityid}')
+											=entity.act_type
+									td
+										a(href='/act/print/#{entity.entityid}') Печатать
+
+
+			

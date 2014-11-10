@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		link(rel='stylesheet' href='/css/bootstrap.min.css')
+		link(rel='stylesheet' href='/css/justified-nav.css')
+		link(rel='stylesheet' href='/css/main.css')
+		- for (itm in style) 
+			link(rel='stylesheet' href='#{style[itm]}')
+		- for (itm in script) 
+			script(src='#{script[itm]}')
+		title Акты о прекращении заказа
+	body
+		.container
+			.masthead
+				img(src='/img/logo.png')
+				span.h4 Акты о прекращении заказа
+				ul.nav.nav-justified
+					li
+						a(href='/') Главная
+					li
+						
+					li
+						
+					li
+						
+					li
+						- if(isAuthenticated) {
+						a(href='/logout') #{user.name}
+						- }
+					li
+						- if(isAuthenticated) {
+						a(href='/logout') Выйти
+						- } else {
+						a(href='/login') Войти
+						- }
+
+
+			block content

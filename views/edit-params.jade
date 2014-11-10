@@ -1,0 +1,23 @@
+extends layout
+block content
+	.page-layout
+		.panel.panel-default
+			.text-center
+				h3 Акт о прекращении заказа (
+					= act_type + ") № " + innerid
+				h4 для заказа № 
+					= orderid
+				br
+			.panel-body
+				form(name='save', action='/param', method='post')
+					for val, index in entity_params
+						.panel.panel-default
+							.panel-heading
+								label(for='str_value#{index}')
+									= val.param_variant_name
+							.panel-body
+								input(type='hidden', name='id', value= val.entity_paramid)
+								input.form-control(type='text', name='str_value', id='str_value#{index}', value= val.str_value)
+					br
+					.well
+						input.btn.btn-primary.btn-lg(type='submit', value='Сохранить')

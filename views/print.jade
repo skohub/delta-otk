@@ -1,0 +1,22 @@
+extends print-layout.jade
+block content
+	.page
+		br
+		br
+		center Акт № 
+			= entity.innerid
+		center от 
+			= entity.created_at
+		center о прекращении выполнения заказа №
+			= entity.orderid
+		br
+		br
+		br
+		br
+		| Наименование заказа
+		br
+		| Заказчик 
+		b
+			= entity.name
+		br
+		| Структура материала

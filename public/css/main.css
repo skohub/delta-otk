@@ -1,0 +1,8 @@
+.page-layout {
+	margin-top: 20px;
+	/*padding-top: 20px;*/
+}
+.nav-justified>li>a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
